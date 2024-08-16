@@ -1,9 +1,10 @@
 #include<stdio.h>
 char board[9]={'1','2','3','4','5','6','7','8','9'};
 int check();
+void system();
 void print_Board()
 {
-    
+    system("clear");
     printf("  %c  |  %c  |  %c\n",board[0],board[1],board[2]);
     printf("_____|_____|_____\n");
     printf("  %c  |  %c  |  %c\n",board[3],board[4],board[5]);
@@ -21,13 +22,13 @@ void main()
     	player=(player%2==0)? 1:2;
     	printf("PLAYER_%d ENTER THE INPUT PLACE",player);
     	scanf("%d",&in[i]);
-    	if(in>9 && in<9)
+    	if(in[i]>9 && in[i]<0)
     	{
     		printf("INVALID CHOICE");
 		}
-		for(j=0;j<=i;j++)
+		for(j=0;j<i;j++)
 		{
-			if(in==j)
+			if(in[i]==in[j])
 			{
 				printf("INVALID CHOICE");
 			}
